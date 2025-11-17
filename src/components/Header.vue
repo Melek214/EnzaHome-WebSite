@@ -49,6 +49,12 @@
   background-color: white;
   border-bottom: 1px solid #ddd;
   font-family: Arial, sans-serif;
+
+  position: fixed; /* sayfanın üstüne sabitler */
+  top: 0;          /* en üstte başlar */
+  left: 0;
+  width: 100%;     /* sayfanın tamamını kaplar */
+  z-index: 1000;  
 }
 
 .header-container {
@@ -60,6 +66,7 @@
 
 .header-left .logo {
   width: 160px;
+  display: block; /* Resimlerin altındaki boşluğu engeller */
 }
 
 .header-center a {
@@ -69,14 +76,14 @@
   text-decoration: none;
 }
 
-.header-center a.highlight {   <!--Sayfadaki tüm a etiketlerine (yani linklere) şu stili uygula-->
+.header-center a.highlight {   /*Sayfadaki tum a etiketlerine (yani linklere) şu stili uygula*/
   font-weight: bold;
   color: #3a75c4;
 }
 
 .header-right span {
   margin: 0 8px;
-  font-size: 20px;
+  font-size: 13px;
   cursor: pointer;
 }
 
@@ -92,7 +99,7 @@
   color: #222;
   font-weight: bold;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 10px;
 }
 
 .sub-menu a:hover {
