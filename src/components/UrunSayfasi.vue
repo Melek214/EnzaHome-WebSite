@@ -9,12 +9,14 @@
     <div class="product-main-content">
       
       <div class="product-image-gallery">
+        <div class="main-image">
+          <img src="/netha-koltuk.jpg" alt="Netha 3lü Yataklı Koltuk" class="placeholder-img" />
+          <button class="arrow left-arrow"> &lt; </button>
+          <button class="arrow right-arrow"> &gt; </button>
         </div>
-      
-      <div class="product-details">
-        </div>
+      </div> <div class="product-details">
+      </div>
     </div>
-    
   </div>
 </template>
 
@@ -49,5 +51,65 @@
   font-weight: bold;
   color: #333;
 }
+
+/* Sol Sütun: Görsel Alanı */
+.product-image-gallery {
+  flex: 1.5; /* Görsel alanına daha fazla yer ayırıyoruz (Örn: %60) */
+}
+
+.main-image {
+  position: relative;
+  border: 1px solid #eee;
+  /* Resmin yükseklik/genişlik oranını korumak için kullanılır */
+  padding-bottom: 75%; 
+  height: 0;
+  overflow: hidden;
+}
+
+.placeholder-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Resmi kutuya sığdırır */
+  opacity: 0.8; 
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.left-arrow { left: 10px; }
+.right-arrow { right: 10px; }
+
+/* Thumbnail sırası */
+.thumbnail-row {
+  display: flex;
+  overflow-x: auto; /* Çok resim olursa yatay kaydırma çubuğu çıkar */
+  gap: 5px;
+  padding: 5px 0;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.thumbnail.active {
+  border-color: #3a75c4; /* Aktif küçük resme mavi çerçeve */
+}
+
 }
 </style>
