@@ -1,27 +1,22 @@
 <script setup>
 import HeaderComponent from './components/Header.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import ProductDetail from './components/ProductDetail.vue' // 👈 YENİ BİLEŞEN İÇE AKTARILDI
+
 </script>
 
 <template>
   <div>
-    <!-- Header -->
     <HeaderComponent />
 
-  </div>
+    <ProductDetail /> </div>
 </template>
 
 <style>
-/* Şimdilik HelloWorld kısmı için basit stil */
+/* Stil kısmı, sadece genel body ayarlarını tutacak şekilde sadeleştirildi */
 body {
   background-color: white;
   color: black;
-}
-p {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 18px;
-  color: #333;
+  margin: 0; /* Header'ın tam oturması için gerekli */
+  padding: 0;
 }
 </style>
-
