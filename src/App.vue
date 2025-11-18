@@ -1,14 +1,31 @@
 <script setup>
-import HeaderComponent from './components/Header.vue'
-import ProductDetail from './components/ProductDetail.vue' // 👈 YENİ BİLEŞEN İÇE AKTARILDI
+import { ref } from 'vue';
+import HeaderComponent from './components/Header.vue';
+import UrunSayfasi from './components/UrunSayfasi.vue';
+import Anasayfa from './components/Anasayfa.vue'; // 👈 TÜRKÇE İSİM İLE İÇE AKTARILDI
 
+// Hangi sayfanın aktif olduğunu tutan reaktif değişken
+const aktifSayfa = ref('Anasayfa'); // Başlangıçta Anasayfa gösterilsin
+
+// Sayfa geçişini yöneten fonksiyon
+const sayfaDegistir = (yeniSayfaAdi) => {
+  // Yalnızca UrunSayfasi'na geçiş yapıldığında veya Anasayfa'ya geri dönüldüğünde aktif sayfa değişir
+  if (yeniSayfaAdi === 'UrunSayfasi') {
+      aktifSayfa.value = 'UrunSayfasi';
+  } else {
+      aktifSayfa.value = 'Anasayfa'; // Diğer tüm linkler (Koltuklar, Seriler vb.) şimdilik Anasayfa'ya döner
+  }
+};
 </script>
 
 <template>
   <div>
-    <HeaderComponent />
+    <HeaderComponent @sayfa-degistir="sayfaDegistir"/>
 
-    <ProductDetail /> </div>
+    <component :is="aktifSayfa === 'Anasayfa' ? Anasayfa : UrunSayfasi" 
+               @sayfa-degistir="sayfaDegistir" 
+    />
+  </div>
 </template>
 
 <style>
