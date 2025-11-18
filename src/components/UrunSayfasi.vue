@@ -1,3 +1,34 @@
+<script setup>
+import { ref } from 'vue';
+
+// --- GÖRSEL VERİLERİ ---
+// Görsel URL'leri (örnek, kendi URL'lerinizle değiştirebilirsiniz)
+const images = ref([
+  '/netha-koltuk.jpg',
+  '/netha-koltuk2.jpg',
+  '/netha-koltuk3.jpg',
+  '/netha-koltuk4.jpg',
+]);
+
+// Şu anki aktif görselin indeksi
+const currentImageIndex = ref(0);
+
+// Sonraki görsel
+const nextImage = () => {
+  currentImageIndex.value = (currentImageIndex.value + 1) % images.value.length;
+};
+
+// Önceki görsel
+const prevImage = () => {
+  currentImageIndex.value = (currentImageIndex.value - 1 + images.value.length) % images.value.length;
+};
+
+// Thumbnail'a tıklanınca görseli değiştir
+const selectImage = (index) => {
+  currentImageIndex.value = index;
+};
+</script>
+
 <template>
   <div class="product-page-container">
     
@@ -10,12 +41,25 @@
       
       <div class="product-image-gallery">
         <div class="main-image">
-          <img src="/netha-koltuk.jpg" alt="Netha 3lü Yataklı Koltuk" class="placeholder-img" />
-          <button class="arrow left-arrow"> &lt; </button>
-          <button class="arrow right-arrow"> &gt; </button>
+          <img 
+            :src="images[currentImageIndex]" 
+            alt="Netha 3lü Yataklı Koltuk" 
+            class="product-main-img" 
+          />
+          
+          <button @click="prevImage" class="arrow left-arrow"> &lt; </button>
+          <button @click="nextImage" class="arrow right-arrow"> &gt; </button>
         </div>
+        
         <div class="thumbnail-row">
-          <img v-for="n in 5" :key="n" src="/netha-koltuk.jpg" class="thumbnail" :class="{ 'active': n === 1 }" />
+          <img 
+            v-for="(image, index) in images" 
+            :key="index" 
+            :src="image" 
+            class="thumbnail" 
+            :class="{ 'active': index === currentImageIndex }" 
+            @click="selectImage(index)" 
+          />
         </div>
       </div>
 
@@ -32,12 +76,12 @@
         </div>
         <p class="sku">SKU: 1439336</p>
 
-      <div class="action-section">
+        <div class="action-section">
           <select class="quantity-select">
             <option>1</option><option>2</option><option>3</option>
           </select>
           <button class="add-to-cart-btn">SEPETE EKLE</button>
-      </div>
+        </div>
         
         <div class="info-list">
           <p><span>💳</span> 6.692,00 Tl x 9 ay'a varan taksit seçenekleri</p>
@@ -64,8 +108,9 @@
   gap: 40px;
   border-top: 1px solid #eee; /* Başlık altındaki çizgiyi koyalım */
   padding-top: 20px;
+}
 
-  /* Breadcrumb Stili */
+/* Breadcrumb Stili */
 .breadcrumb {
   font-size: 13px;
   margin-bottom: 20px;
@@ -85,27 +130,29 @@
 
 /* Sol Sütun: Görsel Alanı */
 .product-image-gallery {
-  flex: 1.2; /* Görsel alanına daha fazla yer ayırıyoruz (Örn: %60) */
+  flex: 3; /* Görsel alanına daha fazla yer ayırıyoruz (Örn: %60) */
 }
 
 .main-image {
   position: relative;
   border: 1px solid #eee;
   /* Resmin yükseklik/genişlik oranını korumak için kullanılır */
-  padding-bottom: 70%; 
+  padding-bottom: 120%;
   height: 0;
   overflow: hidden;
   margin-bottom: 10px;
 }
 
-.placeholder-img {
+/* ESKİ placeholder-img yerine product-main-img kullanıyoruz */
+.product-main-img { 
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Resmi kutuya sığdırır */
-  opacity: 0.8; 
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out; /* Görsel geçiş efekti */
 }
 
 .arrow {
@@ -155,6 +202,8 @@
 }
 
 .product-details h1 {
+  /* Flex değerini 1'de tutarak toplam alanın 1/4'ünü (~%25) detaylara verir. */
+  flex: 1;
   font-size: 32px;
   font-weight: 500;
   margin: 0;
@@ -176,7 +225,7 @@
 
 /* Fiyat Bölümü */
 .price-section {
- display: flex; /* Bu, içindeki öğeleri yan yana getirir */
+  display: flex; /* Bu, içindeki öğeleri yan yana getirir */
   align-items: baseline; /* Farklı boyuttaki yazıların alt çizgilerini hizalar (en iyi yöntem) */
   white-space: nowrap; /*fiyat ve indirim alta düşmesini engeller */
   margin-bottom: 15px;
@@ -198,23 +247,20 @@
 }
 
 .discount-info {
-  /* display: block; yerine inline-block kullanıyoruz ki price-value'nun yanında kalsın */
-  display: inline-block; 
-  color: #e00; 
+  display: inline-block;
+  color: #e00;
   font-weight: bold;
   font-size: 12px;
   margin-top: 0;
-  
 }
 
 .sku {
-  display: block;    /* Başka bir stil varsa ezer, yeni satıra zorlar */
-  text-align: left;  
+  display: block; 
+  text-align: left; 
   font-size: 13px;
   color: #999;
   margin-bottom: 20px;
   margin-top: 5px;
-  /* Emin olmak için diğer stiller */
   padding-bottom: 0;
   border-bottom: none;
 }
@@ -259,19 +305,16 @@
   font-size: 13px;
   color: #333;
   margin: 8px 0;
-  line-height: 1.4; /* Okunabilirliği korumak için satır yüksekliği */
+  line-height: 1.4; 
 }
 
 .info-list span {
   margin-right: 5px;
-
 }
 
 .taksit-link {
   font-size: 14px;
   color: #5bc0de;
   text-decoration: none;
-}
-
 }
 </style>
