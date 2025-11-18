@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+const emit = defineEmits(['sayfaDegistir']);
 
 // --- GÖRSEL VERİLERİ ---
 // Görsel URL'leri (örnek, kendi URL'lerinizle değiştirebilirsiniz)
@@ -34,7 +35,12 @@ const selectImage = (index) => {
     
     <h2> Ürün Sayfası</h2>
     <div class="breadcrumb">
-      <a href="#">Anasayfa</a> > <a href="#">Koltuklar</a> > <a href="#">Serilere Göre</a> > <a href="#">Netha Koltuklar</a> > <span>Netha</span>
+      <a href="#" @click="emit('sayfaDegistir', 'Anasayfa')">Anasayfa</a> > 
+      <a href="#" @click="emit('sayfaDegistir', 'Koltuklar')">Koltuklar</a> > 
+      <a href="#" @click="emit('sayfaDegistir', 'SerilereGore')">Serilere Göre</a> > 
+      <a href="#" @click="emit('sayfaDegistir', 'NethaKoltuklar')">Netha Koltuklar</a> > 
+      
+      <span>Netha</span>
     </div>
 
     <div class="product-main-content">
