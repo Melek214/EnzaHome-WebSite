@@ -177,16 +177,17 @@
 /* Fiyat Bölümü */
 .price-section {
  display: flex; /* Bu, içindeki öğeleri yan yana getirir */
-  align-items: center; /* Öğeleri dikeyde ortalar (fiyat ve yazı) */
-  flex-wrap: wrap; 
+  align-items: baseline; /* Farklı boyuttaki yazıların alt çizgilerini hizalar (en iyi yöntem) */
+  white-space: nowrap; /*fiyat ve indirim alta düşmesini engeller */
   margin-bottom: 15px;
 }
 .price-value {
-  font-size: 32px;
+  font-size: 22px;
   font-weight: bold;
   color: #333;
-  margin: 0 0 10px 0;
+  margin: 0 15px 0 0;
   display: inline-block; /* Fiyatın boyutlanmasını sağlar */
+  line-height: 1; /* Yüksekliğini yazıya yakın tutar */
 }
 
 .currency {
@@ -203,23 +204,26 @@
   font-weight: bold;
   font-size: 12px;
   margin-top: 0;
-  /* Önemli: Fiyatın yanına gelmesi için dikey hizalamayı Flex'e bırakıyoruz. */
-  align-self: flex-end; /* Bu, fiyatın altına düşmesini engelleyen bir Flex kuralıdır */
+  
 }
 
 .sku {
+  display: block;    /* Başka bir stil varsa ezer, yeni satıra zorlar */
+  text-align: left;  
   font-size: 13px;
   color: #999;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  margin-bottom: 20px;
   margin-top: 5px;
+  /* Emin olmak için diğer stiller */
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 /* Buton ve Seçim Alanı */
 .action-section {
   display: flex;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .quantity-select {
@@ -233,8 +237,8 @@
   background-color: #5bc0de;
   color: white;
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
+  padding: 10px 20px;
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   border-radius: 4px;
@@ -246,19 +250,21 @@
 
 /* Ek Bilgiler Listesi */
 .info-list {
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
+  margin-top: 10px;
+  padding-top: 0px;
+  border-top: none;
 }
 
 .info-list p {
-  font-size: 14px;
+  font-size: 13px;
   color: #333;
   margin: 8px 0;
+  line-height: 1.4; /* Okunabilirliği korumak için satır yüksekliği */
 }
 
 .info-list span {
   margin-right: 5px;
+
 }
 
 .taksit-link {
