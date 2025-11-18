@@ -1,15 +1,22 @@
 <script setup>
-// Yalnızca ebeveyne (App.vue) olay yayımlamak için gerekli
+// Ebeveyne (App.vue) sayfa değişim olayını yaymak için tanımlama
 const emit = defineEmits(['sayfaDegistir']);
 
-// KOLTUKLAR'a tıklanınca doğrudan UrunSayfasi'na geçişi tetikler
+// --- Navigasyon Fonksiyonları ---
+
+// Ürün Sayfasına Git
 const goToUrunSayfasi = () => {
     emit('sayfaDegistir', 'UrunSayfasi');
 };
 
-// Diğer menü öğelerine tıklandığında Anasayfa'ya dönmek için genel bir fonksiyon
+// Ana Sayfaya Git
 const goToAnasayfa = () => {
     emit('sayfaDegistir', 'Anasayfa');
+};
+
+// Giriş Yap Sayfasına Git
+const goToGirisYap = () => {
+    emit('sayfaDegistir', 'GirisYap');
 };
 </script>
 
@@ -21,7 +28,8 @@ const goToAnasayfa = () => {
           src="https://be3232fe.cdn.akinoncloud.com/static_omnishop/enza497_2/img/enza-logo.svg"
           alt="Enza Home Logo"
           class="logo"
-          @click="goToAnasayfa()" />
+          @click="goToAnasayfa" 
+        />
       </div>
 
       <nav class="header-center">
@@ -34,40 +42,38 @@ const goToAnasayfa = () => {
       <div class="header-right">
         <span>🔍</span>
         <span>🤍</span>
-        <span>👤</span>
+        <span @click="goToGirisYap" style="cursor: pointer;" title="Üye Girişi">👤</span>
         <span>🛒</span>
       </div>
     </div>
 
     <nav class="sub-menu">
-      <a @click="goToUrunSayfasi()">KOLTUKLAR</a> 
-      <a @click="goToAnasayfa()">YEMEK ODASI</a>
-      <a @click="goToAnasayfa()">YATAK ODASI</a>
-      <a @click="goToAnasayfa()">TAMAMLAYICI MOBİLYA</a>
-      <a @click="goToAnasayfa()">GENÇ ODASI</a>
-      <a @click="goToAnasayfa()">YATAK</a>
-      <a @click="goToAnasayfa()">EV TEKSTİLİ</a>
-      <a @click="goToAnasayfa()">HALI</a>
-      <a @click="goToAnasayfa()">AYDINLATMA</a>
-      <a @click="goToAnasayfa()">AKSESUAR</a>
-      <a @click="goToAnasayfa()">MİMARLAR ÖNERİYOR</a>
+      <a @click="goToUrunSayfasi">KOLTUKLAR</a>
+      
+      <a @click="goToAnasayfa">YEMEK ODASI</a>
+      <a @click="goToAnasayfa">YATAK ODASI</a>
+      <a @click="goToAnasayfa">TAMAMLAYICI MOBİLYA</a>
+      <a @click="goToAnasayfa">GENÇ ODASI</a>
+      <a @click="goToAnasayfa">YATAK</a>
+      <a @click="goToAnasayfa">EV TEKSTİLİ</a>
+      <a @click="goToAnasayfa">HALI</a>
+      <a @click="goToAnasayfa">AYDINLATMA</a>
+      <a @click="goToAnasayfa">AKSESUAR</a>
+      <a @click="goToAnasayfa">MİMARLAR ÖNERİYOR</a>
     </nav>
   </header>
 </template>
 
 <style scoped>
-/* Lütfen tüm stillerinizi buraya kopyalayın. Konumlandırma sorununu çözmek için `position: fixed` yerine `position: relative` kullanılması önerilir, ancak bu örnekte sadece `fixed` kalsın. */
 .main-header {
   background-color: white;
   border-bottom: 1px solid #ddd;
   font-family: Arial, sans-serif;
-
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
- 
 }
 
 .header-container {
@@ -79,7 +85,7 @@ const goToAnasayfa = () => {
 
 .header-left .logo {
   width: 160px;
-  display: block; /* Resimlerin altındaki boşluğu engeller */
+  display: block;
   cursor: pointer;
 }
 
@@ -114,7 +120,7 @@ const goToAnasayfa = () => {
   font-weight: bold;
   text-decoration: none;
   font-size: 10px;
-  cursor: pointer; /* Tıklanabilir olduğunu belirtir */
+  cursor: pointer;
 }
 
 .sub-menu a:hover {

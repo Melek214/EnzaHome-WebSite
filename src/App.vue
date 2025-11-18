@@ -1,20 +1,29 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import HeaderComponent from './components/Header.vue';
 import UrunSayfasi from './components/UrunSayfasi.vue';
-import Anasayfa from './components/Anasayfa.vue'; // 👈 TÜRKÇE İSİM İLE İÇE AKTARILDI
+import Anasayfa from './components/Anasayfa.vue';
+import GirisYap from './components/GirisYap.vue'; 
 
-// Hangi sayfanın aktif olduğunu tutan reaktif değişken
-const aktifSayfa = ref('Anasayfa'); // Başlangıçta Anasayfa gösterilsin
+// Aktif sayfa adını tutan değişken
+const aktifSayfaAdi = ref('Anasayfa'); 
 
-// Sayfa geçişini yöneten fonksiyon
+// Sayfa adlarını bileşenlerle eşleştiren obje
+const sayfalar = {
+  Anasayfa: Anasayfa,
+  UrunSayfasi: UrunSayfasi,
+  GirisYap: GirisYap
+};
+
+// Şu an gösterilecek bileşeni hesaplayan computed özellik
+const AktifBilesen = computed(() => {
+  return sayfalar[aktifSayfaAdi.value] || Anasayfa;
+});
+
+// Sayfa değiştirme fonksiyonu
 const sayfaDegistir = (yeniSayfaAdi) => {
-  // Yalnızca UrunSayfasi'na geçiş yapıldığında veya Anasayfa'ya geri dönüldüğünde aktif sayfa değişir
-  if (yeniSayfaAdi === 'UrunSayfasi') {
-      aktifSayfa.value = 'UrunSayfasi';
-  } else {
-      aktifSayfa.value = 'Anasayfa'; // Diğer tüm linkler (Koltuklar, Seriler vb.) şimdilik Anasayfa'ya döner
-  }
+  console.log("Sayfa değişiyor:", yeniSayfaAdi); // Konsoldan takip etmek için
+  aktifSayfaAdi.value = yeniSayfaAdi;
 };
 </script>
 
@@ -22,18 +31,15 @@ const sayfaDegistir = (yeniSayfaAdi) => {
   <div>
     <HeaderComponent @sayfa-degistir="sayfaDegistir"/>
 
-    <component :is="aktifSayfa === 'Anasayfa' ? Anasayfa : UrunSayfasi" 
-               @sayfa-degistir="sayfaDegistir" 
-    />
+    <component :is="AktifBilesen" @sayfa-degistir="sayfaDegistir" />
   </div>
 </template>
 
 <style>
-/* Stil kısmı, sadece genel body ayarlarını tutacak şekilde sadeleştirildi */
 body {
   background-color: white;
   color: black;
-  margin: 0; /* Header'ın tam oturması için gerekli */
+  margin: 0; 
   padding: 0;
 }
 </style>
