@@ -2,8 +2,10 @@
 import { ref, computed } from 'vue';
 import HeaderComponent from './components/Header.vue';
 import UrunSayfasi from './components/UrunSayfasi.vue';
-import Anasayfa from './components/Anasayfa.vue';
-import GirisYap from './components/GirisYap.vue'; 
+import AnaSayfa from './components/AnaSayfa.vue';
+import GirisYapKayitOl from './components/GirisYapKayitOl.vue';
+
+
 
 // Aktif sayfa adını tutan değişken
 const aktifSayfaAdi = ref('Anasayfa'); 
@@ -12,7 +14,7 @@ const aktifSayfaAdi = ref('Anasayfa');
 const sayfalar = {
   Anasayfa: Anasayfa,
   UrunSayfasi: UrunSayfasi,
-  GirisYap: GirisYap
+  GirisYap: GirisYapKayitOl
 };
 
 // Şu an gösterilecek bileşeni hesaplayan computed özellik
