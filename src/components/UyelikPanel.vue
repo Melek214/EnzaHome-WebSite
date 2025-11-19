@@ -7,7 +7,7 @@
       </div>
 
       <div class="panel-content">
-        <h2 class="user-greeting">Merhaba, Eray</h2>
+        <h2 class="user-greeting">Merhaba, Melek</h2>
         
         <div class="section-group">
           <h3 class="section-title">SİPARİŞLERİM</h3>

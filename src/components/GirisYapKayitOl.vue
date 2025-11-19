@@ -6,7 +6,7 @@
         <h1 class="page-title">Yeni Üyelik</h1>
         <p class="subtitle">Yeni bir üyelik oluşturmak için lütfen aşağıdaki formu doldurunuz.</p>
 
-        <form @submit.prevent="handleRegister">
+        <form @submit.prevent="handleAuthAction"> 
           <div class="form-row">
             <div class="form-group half-width">
               <label for="ad">Ad*</label>
@@ -65,7 +65,7 @@
       <div class="form-column login-column">
         <h1 class="page-title">Üye Girişi Yap</h1>
 
-        <form @submit.prevent="handleLogin">
+        <form @submit.prevent="handleAuthAction"> 
           <div class="form-group full-width">
             <label for="log-email">E-posta Adresi*</label>
             <input type="email" id="log-email" v-model="loginData.email" class="form-input" required />
@@ -98,12 +98,31 @@
 
     </div>
   </div>
-</template>
+  </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, defineEmits } from 'vue';
 
 // --- Giriş Yap (Login) Verileri ---
+const aktifForm = ref('GirisYap'); // Başlangıçta Giriş Yap formunu göster
+const emit = defineEmits(['sayfaDegistir', 'loginSuccess']); // 👇 YENİ EMIT TANIMI
+
+// Butona tıklandığında çağrılacak fonksiyon
+// Burası artık tüm formu gönderdiğimizde (submit) çalışır.
+const handleAuthAction = () => {
+    // Burada normalde API'ye istek atılır ve başarılı olup olmadığı kontrol edilir.
+    
+    // Biz başarılı girişi/kaydı simüle ediyoruz:
+    console.log("Giriş/Kayıt Simülasyonu Başarılı. App.vue'ya sinyal gönderiliyor.");
+    
+    // 👇 App.vue'ya 'loginSuccess' olayını gönderiyoruz
+    emit('loginSuccess');
+    
+    // Başarılı işlemden sonra ana sayfaya yönlendir (veya paneli aç)
+    // Şimdilik ana sayfaya dönelim. App.vue paneli otomatik açacaktır.
+    emit('sayfaDegistir', 'Anasayfa'); 
+};
+
 const loginData = ref({
   email: '',
   password: ''
@@ -114,9 +133,12 @@ const toggleLogPasswordVisibility = () => {
   showLogPassword.value = !showLogPassword.value;
 };
 
+// handleLogin fonksiyonu artık kullanılmadığı için silinebilir
+/*
 const handleLogin = () => {
   console.log('Giriş yapılıyor:', loginData.value);
 };
+*/
 
 // --- Kayıt Ol (Register) Verileri ---
 const registerData = ref({
@@ -134,12 +156,18 @@ const toggleRegPasswordVisibility = () => {
   showRegPassword.value = !showRegPassword.value;
 };
 
+// handleRegister fonksiyonu artık kullanılmadığı için silinebilir
+/*
 const handleRegister = () => {
   console.log('Yeni üyelik oluşturuluyor:', registerData.value);
 };
+*/
 </script>
 
 <style scoped>
+/* Stillerinizde değişiklik yapılmadı */
+/* ... (Mevcut stiller) ... */
+
 .account-page-wrapper {
   padding-top: 150px; /* Header altı boşluk */
   padding-bottom: 50px;

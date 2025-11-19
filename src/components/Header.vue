@@ -11,6 +11,11 @@ const props = defineProps({
 
 // Ebeveyne (App.vue) sayfa değişim olayını yaymak için tanımlama
 const emit = defineEmits(['sayfaDegistir']);
+// Kişi ikonuna tıklandığında HeaderAction'ı tetikle
+const goToGirisYap = () => {
+    // App.vue'ya sadece 'GirisYap' aksiyonunu gönderiyoruz
+    emit('sayfaDegistir', 'GirisYap'); 
+};
 
 
 // --- Navigasyon Fonksiyonları ---
@@ -25,10 +30,7 @@ const goToAnasayfa = () => {
     emit('sayfaDegistir', 'Anasayfa');
 };
 
-// Giriş Yap Sayfasına Git
-const goToGirisYap = () => {
-    emit('sayfaDegistir', 'GirisYap');
-};
+
 </script>
 
 <template>
@@ -57,6 +59,24 @@ const goToGirisYap = () => {
         <span>🛒</span>
       </div>
     </div>
+
+    <a href="#" class="header-icon-link" @click.prevent="goToGirisYap">
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="1.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    :style="{ color: props.isLoggedIn ? 'black' : '#666' }" 
+    >
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+    <circle cx="12" cy="7" r="4"></circle>
+  </svg>
+</a>
 
     <nav class="sub-menu">
       <a @click="goToUrunSayfasi">KOLTUKLAR</a>

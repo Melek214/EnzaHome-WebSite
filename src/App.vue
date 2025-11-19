@@ -26,11 +26,6 @@ const AktifBilesen = computed(() => {
   return sayfalar[aktifSayfaAdi.value] || Anasayfa;
 });
 
-// Sayfa değiştirme fonksiyonu
-const sayfaDegistir = (yeniSayfaAdi) => {
-  console.log("Sayfa değişiyor:", yeniSayfaAdi); // Konsoldan takip etmek için
-  aktifSayfaAdi.value = yeniSayfaAdi;
-};
 
 const handleHeaderAction = (action) => {
   if (action === 'GirisYap') {
@@ -47,14 +42,25 @@ const handleHeaderAction = (action) => {
   }
 }
 
+const handleLoginSuccess = () => {
+  isLoggedIn.value = true; // Giriş yapıldı
+  showUyePanel.value = true; // Üyelik panelini aç
+};
+
+
+
 </script>
 
 <template>
   <div>
     <HeaderComponent @sayfa-degistir="handleHeaderAction" :isLoggedIn="isLoggedIn.value" />
 
-    <component :is="AktifBilesen" @sayfa-degistir="handleHeaderAction" />
-
+    <component 
+  :is="AktifBilesen" 
+  @sayfa-degistir="handleHeaderAction" 
+  
+  @login-success="handleLoginSuccess"  
+/>
     <UyelikPanel 
       v-if="showUyePanel" 
       @kapat="showUyePanel = false" 

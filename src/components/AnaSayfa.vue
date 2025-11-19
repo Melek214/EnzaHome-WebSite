@@ -12,7 +12,7 @@ import SliderComponent from './Slider.vue'; // Slider'ı içe aktardık
 <style scoped>
 .anasayfa-container {
   /* Header'ın yüksekliğini telafi etmek için padding korundu */
- padding-top: 100px;
+ padding-top: 110px;
   padding-bottom: 50;
   padding-left: 0;
   padding-right: 0;
