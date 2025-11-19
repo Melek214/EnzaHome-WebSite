@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-const emit = defineEmits(['sayfaDegistir']);
+const emit = defineEmits(['sayfaDegistir', 'sepeteEkle']);
 
 // --- GÖRSEL VERİLERİ ---
 // Görsel URL'leri (örnek, kendi URL'lerinizle değiştirebilirsiniz)
@@ -28,6 +28,24 @@ const prevImage = () => {
 const selectImage = (index) => {
   currentImageIndex.value = index;
 };
+
+// Ürün detaylarını temsil eden bir obje tanımlayalım (gerçek bir ürün verisi simülasyonu)
+const aktifUrun = {
+    id: 1,
+    ad: "Netha 3'lü Yataklı Koltuk + Berjer",
+    fiyat: 53536.00,
+    resim: '/netha-koltuk.jpg',
+    // ... diğer veriler
+};
+
+// Sepete Ekle butonuna tıklandığında bu fonksiyon çalışacak
+const urunuSepeteEkle = () => {
+    // emit ile App.vue'daki sepeteEkle fonksiyonunu çağırıyoruz.
+    // Aktif ürünü parametre olarak gönderiyoruz.
+    emit('sepeteEkle', aktifUrun);
+    alert(`${aktifUrun.ad} sepete eklendi!`);
+};
+
 </script>
 
 <template>
@@ -86,7 +104,7 @@ const selectImage = (index) => {
           <select class="quantity-select">
             <option>1</option><option>2</option><option>3</option>
           </select>
-          <button class="add-to-cart-btn">SEPETE EKLE</button>
+          <button @click="urunuSepeteEkle" class="add-to-cart-btn">SEPETE EKLE</button>
         </div>
         
         <div class="info-list">
@@ -99,6 +117,7 @@ const selectImage = (index) => {
       </div>
     </div>
   </div>
+   
 </template>
 
 <style scoped>
