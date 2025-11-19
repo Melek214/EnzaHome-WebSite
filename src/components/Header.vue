@@ -1,6 +1,17 @@
 <script setup>
+import { defineProps, defineEmits } from 'vue';
+
+// 👇 YENİ PROP TANIMLAMA
+const props = defineProps({
+  isLoggedIn: {
+    type: Boolean,
+    default: false
+  }
+});
+
 // Ebeveyne (App.vue) sayfa değişim olayını yaymak için tanımlama
 const emit = defineEmits(['sayfaDegistir']);
+
 
 // --- Navigasyon Fonksiyonları ---
 
