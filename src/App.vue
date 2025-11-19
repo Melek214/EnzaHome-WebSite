@@ -5,6 +5,7 @@ import UrunSayfasi from './components/UrunSayfasi.vue';
 import AnaSayfa from './components/AnaSayfa.vue';
 import GirisYapKayitOl from './components/GirisYapKayitOl.vue';
 import UyelikPanel from './components/UyelikPanel.vue';
+import FooterComponent from './components/Footer.vue';
 
 
 
@@ -58,7 +59,6 @@ const handleLoginSuccess = () => {
     <component 
   :is="AktifBilesen" 
   @sayfa-degistir="handleHeaderAction" 
-  
   @login-success="handleLoginSuccess"  
 />
     <UyelikPanel 
@@ -66,6 +66,7 @@ const handleLoginSuccess = () => {
       @kapat="showUyePanel = false" 
       @sayfa-degistir="handleHeaderAction"
     />
+    <FooterComponent />
   </div>
 </template>
 
