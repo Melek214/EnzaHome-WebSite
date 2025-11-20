@@ -1,133 +1,130 @@
 <template>
-  <div class="cart-page-container">
-    
-    <div class="campaign-bar">
-      <div class="campaign-item">
-        Sepetinize **46.464,00** değerinde daha kampanya ürünü ekleyin, 5.000 TL indirim kazanın.
-      </div>
-      <div class="campaign-item">
-        Sepetinize **2.146,00** değerinde daha kampanya ürünü ekleyin, 5.000 TL indirim kazanın.
-      </div>
-      <div class="campaign-item">
-        Sepetinize **7.484,00** değerinde daha kampanya ürünü ekleyin, 7.000 TL indirim kazanın.
-      </div>
-    </div>
-    
-    <div class="cart-main-content">
-      
-      <div class="cart-products-area">
-        <div class="cart-header">
-          <span class="cart-title">SEPETİM</span>
-          <a href="#" class="continue-shopping">Alışverişe Devam Et</a>
+  <div class="cart-wrapper">
+
+    <div class="cart-page-container">
+
+      <div class="campaign-bar">
+        <div class="campaign-item">
+          Sepetinize <strong>46.464,00</strong> değerinde daha kampanya ürünü ekleyin, 5.000 TL indirim kazanın.
         </div>
-        
-        <div class="product-list">
-          
-          <div class="cart-item">
-            <div class="item-details">
-              <div class="item-image-container">
-                <img src="/netha-koltuk.jpg" alt="Netha 3'lü Yataklı Koltuk + Berjer" class="item-image">
+        <div class="campaign-item">
+          Sepetinize <strong>2.146,00</strong> değerinde daha kampanya ürünü ekleyin, 5.000 TL indirim kazanın.
+        </div>
+        <div class="campaign-item">
+          Sepetinize <strong>7.484,00</strong> değerinde daha kampanya ürünü ekleyin, 7.000 TL indirim kazanın.
+        </div>
+      </div>
+
+      <div class="cart-main-content">
+
+        <div class="cart-products-area">
+          <div class="cart-header">
+            <span class="cart-title">SEPETİM</span>
+            <a href="#" class="continue-shopping">Alışverişe Devam Et</a>
+          </div>
+
+          <div class="product-list">
+
+            <div class="cart-item">
+              <div class="item-details">
+                <div class="item-image-container">
+                  <img src="/netha-koltuk.jpg" alt="Netha 3'lü Yataklı Koltuk + Berjer" class="item-image">
+                </div>
+
+                <div class="item-info">
+                  <div class="item-name">Netha</div>
+                  <div class="item-description">3'lü Yataklı Koltuk + Berjer</div>
+                  <div class="delivery-time">6-8 hafta içerisinde teslim edilir.</div>
+                </div>
               </div>
-              
-              <div class="item-info">
-                <div class="item-name">Netha</div>
-                <div class="item-description">3'lü Yataklı Koltuk + Berjer</div>
-                <div class="delivery-time">6-8 hafta içerisinde teslim edilir.</div>
+
+              <div class="item-controls">
+
+                <div class="quantity-control">
+                  <button class="qty-btn">-</button>
+                  <input type="text" value="1" class="qty-input">
+                  <button class="qty-btn">+</button>
+                </div>
+
+                <div class="price-section">
+                  <span class="old-price">67.380,00 TL</span>
+                  <span class="current-price">53.536,00 TL</span>
+                </div>
+
+                <button class="remove-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+
               </div>
             </div>
 
-            <div class="item-controls">
-              
-              <div class="quantity-control">
-                <button class="qty-btn">-</button>
-                <input type="text" value="1" class="qty-input">
-                <button class="qty-btn">+</button>
-              </div>
+          </div>
+        </div>
 
-              <div class="price-section">
-                <span class="old-price">67.380,00 TL</span>
-                <span class="current-price">53.536,00 TL</span>
-              </div>
-              
-              <button class="remove-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
+        <div class="order-summary-area">
 
+          <div class="summary-box">
+
+            <div class="summary-header">
+              <h4>SİPARİŞ ÖZETİ</h4>
+              <span class="item-count">1 Ürün</span>
+            </div>
+
+            <div class="summary-line">
+              <span>Ürünlerin Toplamı (1 ürün)</span>
+              <span>57.360,00 TL</span>
+            </div>
+
+            <div class="summary-line highlight-line">
+              <span>1000 TL Üzeri Kargo Bedava</span>
+              <span class="free-text">Ücretsiz</span>
+            </div>
+
+            <div class="summary-line discount-line">
+              <span>İndirim Toplamı</span>
+              <span>-3.824,00 TL</span>
+            </div>
+
+            <div class="summary-total">
+              <h4>TOPLAM</h4>
+              <span class="total-amount">53.536,00 TL</span>
+            </div>
+
+          </div>
+
+          <div class="discount-code-box">
+            <label for="discount-code">İndirim Kodu</label>
+            <div class="input-group">
+              <input type="text" id="discount-code" placeholder="Kodu Giriniz">
+              <button class="apply-btn">Uygula</button>
             </div>
           </div>
-          </div>
-      </div>
-      
-      <div class="order-summary-area">
-        
-        <div class="summary-box">
-          
-          <div class="summary-header">
-            <h4>SİPARİŞ ÖZETİ</h4>
-            <span class="item-count">1 Ürün</span>
-          </div>
 
-          <div class="summary-line">
-            <span>Ürünlerin Toplamı (1 ürün)</span>
-            <span>57.360,00 TL</span>
-          </div>
-          
-          <div class="summary-line highlight-line">
-            <span>1000 TL Üzeri Kargo Bedava</span>
-            <span class="free-text">Ücretsiz</span>
-          </div>
+          <button class="checkout-btn">
+            SEPETİ ONAYLA >
+          </button>
+        </div>
 
-          <div class="summary-line discount-line">
-            <span>İndirim Toplamı</span>
-            <span>-3.824,00 TL</span>
-          </div>
-          
-          <div class="summary-total">
-            <h4>TOPLAM</h4>
-            <span class="total-amount">53.536,00 TL</span>
-          </div>
-          
-        </div>
-        
-        <div class="discount-code-box">
-          <label for="discount-code">İndirim Kodu</label>
-          <div class="input-group">
-            <input type="text" id="discount-code" placeholder="Kodu Giriniz">
-            <button class="apply-btn">Uygula</button>
-          </div>
-        </div>
-        
-        <button class="checkout-btn">
-          SEPETİ ONAYLA >
-        </button>
       </div>
-      
+
     </div>
-    
+
   </div>
 </template>
 
 <script setup>
-// Sepet bileşeni için şimdilik sade bir yapı kullanacağız.
-// Dinamik verileri sonraki adımda ekleyeceğiz.
-import { computed } from 'vue';
-
-// App.vue'dan gelen sepet verisini bir prop olarak tanımlıyoruz
-const props = defineProps({
-  sepet: {
-    type: Array,
-    default: () => []
-  }
-});
-
-// Sepet toplamını hesaplayacak basit bir computed özellik (Özet Bölümü İçin)
-const sepetToplami = computed(() => {
-  // Toplam fiyat = (ürün fiyatı * ürün miktarı) toplamı
-  return props.sepet.reduce((toplam, urun) => toplam + (urun.fiyat * urun.miktar), 0).toFixed(2);
-});
+// (Eğer Cart.vue içinde script'in varsa oraya ilave edebilirsin. 
+//  Senin paylaştığın önceki sürümde script yoktu, sadece template+style kullandın.)
 </script>
 
 <style scoped>
+/* Wrapper sayfayı header kadar aşağı iter. Header yüksekliğine göre ayarla. */
+.cart-wrapper {
+  margin-top: 120px; /* Eğer header yüksekliğin farklıysa bu değeri değiştir. */
+  /* Alternatif: margin-top: var(--header-height, 120px); */
+  box-sizing: border-box;
+}
+
 /* Genel Yapı ve Konteyner */
 .cart-page-container {
   max-width: 1400px;
@@ -141,6 +138,7 @@ const sepetToplami = computed(() => {
   justify-content: space-between;
   border: 1px solid #e0e0e0;
   margin-bottom: 20px;
+  background: #fff;
 }
 
 .campaign-item {
@@ -356,7 +354,7 @@ const sepetToplami = computed(() => {
 }
 
 .highlight-line {
-  color: #28a745; /* Yeşil tonu (Ücretsiz kargo) */
+  color: #6198e5; /* Yeşil tonu (Ücretsiz kargo) */
 }
 
 .free-text {
@@ -447,5 +445,20 @@ const sepetToplami = computed(() => {
 
 .checkout-btn:hover {
   background-color: #333;
+}
+
+/* Responsive küçük ekran için hafif düzenleme */
+@media (max-width: 900px) {
+  .cart-main-content {
+    flex-direction: column;
+  }
+  .cart-products-area {
+    border-right: none;
+    padding-right: 0;
+  }
+  .order-summary-area {
+    max-width: none;
+    width: 100%;
+  }
 }
 </style>

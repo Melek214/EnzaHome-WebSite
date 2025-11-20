@@ -97,6 +97,7 @@ const sayfaDegistir = (yeniSayfaAdi) => {
       @sayfa-degistir="handleHeaderAction"
     />
     <FooterComponent />
+    
   </div>
 </template>
 
@@ -106,5 +107,11 @@ body {
   color: black;
   margin: 0; 
   padding: 0;
+}
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
 }
 </style>

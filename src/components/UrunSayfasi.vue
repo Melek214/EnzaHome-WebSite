@@ -162,7 +162,7 @@ const urunuSepeteEkle = () => {
   position: relative;
   border: 1px solid #eee;
   /* Resmin yükseklik/genişlik oranını korumak için kullanılır */
-  padding-bottom: 120%;
+  padding-bottom: 70%;
   height: 0;
   overflow: hidden;
   margin-bottom: 10px;
