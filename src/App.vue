@@ -6,6 +6,7 @@ import AnaSayfa from './components/AnaSayfa.vue';
 import GirisYapKayitOl from './components/GirisYapKayitOl.vue';
 import UyelikPanel from './components/UyelikPanel.vue';
 import FooterComponent from './components/Footer.vue';
+import Cart from './components/Cart.vue';
 
 
 
@@ -13,13 +14,15 @@ import FooterComponent from './components/Footer.vue';
 const aktifSayfaAdi = ref('Anasayfa'); 
 const isLoggedIn = ref(false); // Kullanıcı giriş yaptı mı? (Başlangıçta hayır)
 const showUyePanel = ref(false); // Üyelik paneli açık mı?
+const sepet = ref([]);
 
 // Sayfa adlarını bileşenlerle eşleştiren obje
 const sayfalar = {
   Anasayfa: AnaSayfa,
   UrunSayfasi: UrunSayfasi,
   GirisYap: GirisYapKayitOl,
-   UyelikPanel: UyelikPanel
+   UyelikPanel: UyelikPanel,
+   'Sepet': Cart
 };
 
 // Şu an gösterilecek bileşeni hesaplayan computed özellik
@@ -48,18 +51,45 @@ const handleLoginSuccess = () => {
   showUyePanel.value = true; // Üyelik panelini aç
 };
 
+// Sepete ürün ekleme fonksiyonu
+const sepeteEkle = (urun) => {
+  // Basitçe ürünün miktarını 1 olarak ayarlar ve sepete ekler
+  const mevcutUrun = sepet.value.find(item => item.id === urun.id);
+  
+  if (mevcutUrun) {
+    // Ürün zaten varsa miktarını artır
+    mevcutUrun.miktar++;
+  } else {
+    // Ürün sepette yoksa, 1 miktar ile ekle
+    sepet.value.push({ ...urun, miktar: 1 });
+  }
+  
+  // Ekleme sonrası kullanıcıyı Sepet sayfasına yönlendir (Opsiyonel)
+  aktifSayfaAdi.value = 'Sepet'; 
+};
 
+// Sayfa değişim fonksiyonu
+const sayfaDegistir = (yeniSayfaAdi) => {
+    aktifSayfaAdi.value = yeniSayfaAdi;
+};
 
 </script>
 
 <template>
   <div>
-    <HeaderComponent @sayfa-degistir="handleHeaderAction" :isLoggedIn="isLoggedIn.value" />
+    <HeaderComponent @sayfa-degistir="handleHeaderAction" 
+    :isLoggedIn="isLoggedIn.value" 
+    :sepet-urun-sayisi="sepet.length"  
+  />
 
     <component 
   :is="AktifBilesen" 
   @sayfa-degistir="handleHeaderAction" 
-  @login-success="handleLoginSuccess"  
+  @login-success="handleLoginSuccess" 
+  :sepet="sepet"
+  @sepete-ekle="sepeteEkle"
+  
+  
 />
     <UyelikPanel 
       v-if="showUyePanel" 

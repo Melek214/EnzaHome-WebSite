@@ -43,7 +43,7 @@ const urunuSepeteEkle = () => {
     // emit ile App.vue'daki sepeteEkle fonksiyonunu çağırıyoruz.
     // Aktif ürünü parametre olarak gönderiyoruz.
     emit('sepeteEkle', aktifUrun);
-    alert(`${aktifUrun.ad} sepete eklendi!`);
+    //alert(`${aktifUrun.ad} sepete eklendi!`);
 };
 
 </script>
