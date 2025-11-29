@@ -1,12 +1,16 @@
 <template>
   <div class="anasayfa-container">
       <SliderComponent />
+
+       <!-- Keşfet ve Tasarım Bölümü  -->
+    <DiscoverSection />
     </div>
 </template>
 
 <script setup>
-import SliderComponent from './Slider.vue'; // Slider'ı içe aktardık
+import SliderComponent from '../molecules/Slider.vue'; // Slider'ı içe aktardık
 // Yönlendirme mantığı Header.vue ve App.vue'da olduğu için buraya bir şey yazmaya gerek yok.
+import DiscoverSection from '../molecules/DiscoverSection.vue';
 </script>
 
 <style scoped>

@@ -1,12 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue';
-import HeaderComponent from './components/Header.vue';
-import UrunSayfasi from './components/UrunSayfasi.vue';
-import AnaSayfa from './components/AnaSayfa.vue';
-import GirisYapKayitOl from './components/GirisYapKayitOl.vue';
-import UyelikPanel from './components/UyelikPanel.vue';
-import FooterComponent from './components/Footer.vue';
-import Cart from './components/Cart.vue';
+import HeaderComponent from './components/organisms/Header.vue';
+import UrunSayfasi from './components/pages/UrunSayfasi.vue';
+import AnaSayfa from './components/pages/AnaSayfa.vue';
+import GirisYapKayitOl from './components/organisms/GirisYapKayitOl.vue';
+import UyelikPanel from './components/organisms/UyelikPanel.vue';
+import FooterComponent from './components/organisms/Footer.vue';
+import Cart from './components/pages/Cart.vue';
 
 
 
