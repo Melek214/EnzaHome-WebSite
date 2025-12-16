@@ -3,9 +3,9 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../plugins/firebase.client'
 import type { Category } from '../types/Category'
 
-export const useCategoryStore = defineStore('category', {
-  state: (): { categories: Category[] } => ({
-  categories: []
+export const usecategoryStore = defineStore('category', {
+  state: () => ({
+    categories: [] as Category[]
   }),
 
   actions: {
