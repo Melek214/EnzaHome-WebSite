@@ -45,15 +45,19 @@
             </div>
           </div>
           
-          <div class="checkbox-group">
-            <input type="checkbox" id="aydinlatma" v-model="registerData.aydinlatma" required />
-            <label for="aydinlatma">Kişisel verilerimin işlenmesi hakkında <a href="#">Aydınlatma Metnini</a> okudum ve anladım.</label>
-          </div>
-          
-          <div class="checkbox-group">
-            <input type="checkbox" id="iletisim" v-model="registerData.iletisim" />
-            <label for="iletisim">İletişim izinleri</label>
-          </div>
+        <div class="checkbox-row">
+  <input type="checkbox" class="custom-checkbox" id="kvkk" />
+  <label for="kvkk">
+    Kişisel verilerimin işlenmesi hakkında
+    <a href="#" class="acceptance-text">Aydınlatma Metnini</a> okudum ve anladım.
+  </label>
+</div>
+
+<div class="checkbox-row">
+  <input type="checkbox" class="custom-checkbox" id="iletisim" />
+  <label for="iletisim">İletişim izinleri</label>
+</div>
+
 
           <button type="submit" class="register-btn">ENZA ÜYELİĞİ OLUŞTUR</button>
 
@@ -264,26 +268,36 @@ const handleRegister = () => {
 }
 
 /* --- Kayıt Ol (Register) Alanı Özelleri --- */
-.register-column {
-    border-right: 1px solid #eee; /* İki sütun arasına ince çizgi (isteğe bağlı) */
-    padding-right: 50px; 
+.custom-checkbox {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #fff;
+  flex-shrink: 0;
 }
 
-.checkbox-group {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-    font-size: 14px;
+.custom-checkbox:checked {
+  background-color: #000;
 }
 
-.checkbox-group input[type="checkbox"] {
-    margin-top: 3px;
-    margin-right: 10px;
-    min-width: 15px;
-    min-height: 15px;
-    border: 1px solid black;
-    cursor: pointer;
+/* ✔ Checkbox Satır Hizalaması */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
 }
+
+.checkbox-row label {
+  font-size: 12px;
+  color: #444;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
 
 .checkbox-group a, .acceptance-text a {
     color: black;
@@ -309,6 +323,7 @@ const handleRegister = () => {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-radius: 0 !important;
 }
 
 .login-btn:hover, .register-btn:hover {
@@ -331,4 +346,6 @@ const handleRegister = () => {
   text-decoration: underline;
   font-weight: 500;
 }
+
+
 </style>

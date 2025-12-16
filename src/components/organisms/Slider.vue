@@ -33,7 +33,7 @@ const slideCount = 3;
 // Wrapper'ın CSS transform stilini hesaplar (Slayt geçişini bu sağlar)
 const wrapperStyle = computed(() => {
   // Her slaydın genişliği %100 kabul edilirse, kaydırma miktarı: -(currentSlide - 1) * 100
-  const offset = (currentSlide.value - 1) * 100;
+  const offset = (currentSlide.value - 1) * 33.5;
   return {
     transform: `translateX(-${offset}%)`
   };
@@ -81,7 +81,11 @@ onUnmounted(() => {
   width: 100%;
   overflow: hidden; 
   position: relative;
-  height: 400px; /* Slider'ın yüksekliğini ayarlayın */
+  height: 500px; /* Slider'ın yüksekliğini ayarlayın */
+  padding-top: 0;  
+  margin: 0 auto;
+   margin-top: -65px !important; /* Yukarı çeker */
+
 }
 
 .slider-wrapper {
@@ -151,21 +155,21 @@ onUnmounted(() => {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
   color: white;
   border: none;
   padding: 10px 15px;
   font-size: 24px;
   cursor: pointer;
   z-index: 10;
-  border-radius: 5px;
+  border-radius: 0;
 }
 
 .left-arrow {
-  left: 10px;
+  left: 0;
 }
 
 .right-arrow {
-  right: 10px;
+  right: 0;
 }
 </style>

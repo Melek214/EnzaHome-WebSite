@@ -8,9 +8,17 @@
 </template>
 
 <script setup>
-import SliderComponent from '../molecules/Slider.vue'; // Slider'ı içe aktardık
+import SliderComponent from '../organisms/Slider.vue'; // Slider'ı içe aktardık
 // Yönlendirme mantığı Header.vue ve App.vue'da olduğu için buraya bir şey yazmaya gerek yok.
-import DiscoverSection from '../molecules/DiscoverSection.vue';
+import DiscoverSection from '../organisms/DiscoverSection.vue';
+
+const { $db } = useNuxtApp()
+const categoryStore = useCategoryStore()
+
+onMounted(() => {
+  categoryStore.fetchCategories($db)
+})
+
 </script>
 
 <style scoped>

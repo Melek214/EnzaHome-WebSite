@@ -15,14 +15,15 @@ const aktifSayfaAdi = ref('Anasayfa');
 const isLoggedIn = ref(false); // Kullanıcı giriş yaptı mı? (Başlangıçta hayır)
 const showUyePanel = ref(false); // Üyelik paneli açık mı?
 const sepet = ref([]);
+const cartCount = ref(0);
 
 // Sayfa adlarını bileşenlerle eşleştiren obje
 const sayfalar = {
   Anasayfa: AnaSayfa,
   UrunSayfasi: UrunSayfasi,
   GirisYap: GirisYapKayitOl,
-   UyelikPanel: UyelikPanel,
-   'Sepet': Cart
+  UyelikPanel: UyelikPanel,
+  'Sepet': Cart,
 };
 
 // Şu an gösterilecek bileşeni hesaplayan computed özellik
@@ -53,8 +54,21 @@ const handleLoginSuccess = () => {
 
 // Sepete ürün ekleme fonksiyonu
 const sepeteEkle = (urun) => {
-  // Basitçe ürünün miktarını 1 olarak ayarlar ve sepete ekler
+
+  // 1) Sepete eklenen ürün zaten var mı kontrol et
   const mevcutUrun = sepet.value.find(item => item.id === urun.id);
+
+  if (mevcutUrun) {
+    // varsa miktarı arttır
+    mevcutUrun.miktar += 1;
+  } else {
+    // yoksa yeni ürün olarak ekle
+    sepet.value.push({ ...urun, miktar: 1 });
+  }
+
+  // 2) Sepet sayacını arttır
+  cartCount.value++;
+
   
   if (mevcutUrun) {
     // Ürün zaten varsa miktarını artır
@@ -68,6 +82,14 @@ const sepeteEkle = (urun) => {
   aktifSayfaAdi.value = 'Sepet'; 
 };
 
+const props = defineProps({
+  cartCount: {
+    type: Number,
+    default: 0
+  }
+});
+
+
 // Sayfa değişim fonksiyonu
 const sayfaDegistir = (yeniSayfaAdi) => {
     aktifSayfaAdi.value = yeniSayfaAdi;
@@ -76,10 +98,12 @@ const sayfaDegistir = (yeniSayfaAdi) => {
 </script>
 
 <template>
-  <div>
+  <div  class="app-container">
     <HeaderComponent @sayfa-degistir="handleHeaderAction" 
     :isLoggedIn="isLoggedIn.value" 
     :sepet-urun-sayisi="sepet.length"  
+     :cartCount="cartCount"
+    @sayfaDegistir="sayfaDegistir"
   />
 
     <component 
@@ -98,6 +122,9 @@ const sayfaDegistir = (yeniSayfaAdi) => {
     />
     <FooterComponent />
     
+   
+/>
+    
   </div>
 </template>
 
@@ -109,9 +136,25 @@ body {
   padding: 0;
 }
 .app-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 120px;
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden; /* Taşma engel */
+}
+
+.app-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
 </style>

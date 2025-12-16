@@ -110,20 +110,23 @@
 
 /* --- Buton --- */
 .action-btn {
-  background: transparent;
+  background: none;
   border: 1px solid #000;
   padding: 12px 40px;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 400;
+  color: black;
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 10px;
-  transition: all 0.3s;
+  transition: none !important;
+  border-radius:0;
 }
 
 .action-btn:hover {
-  background: #000;
-  color: #fff;
+  background: none !important;   /* Beyaz kalacak */
+  color: black !important;       /* Yazı siyah kalacak */
+  border-color: black !important;
 }
 
 /* --- Görsel Alanları --- */

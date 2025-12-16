@@ -1,418 +1,402 @@
 <template>
-  <footer class="site-footer">
-    <div class="footer-container">
-      
-      <div class="footer-top">
-        
-        <div class="footer-links-area">
+  <footer class="footer">
+
+    <!-- Ana Konteyner -->
+    <div class="footer-grid-wrapper">
+
+      <!-- 🔥 TEK BÜYÜK GRID (3 Ana Link Kolonu + 2 Görsel Kolonu) -->
+      <div class="footer-grid">
+
+        <!-- Sütun 1: BİRLEŞİK: ENZA HOME + POPÜLER TAKIMLAR -->
+        <div class="link-col main-link-col">
+          <!-- Üst Liste -->
+          <h4>ENZA HOME</h4>
+          <ul>
+            <li><a href="#">Kurumsal</a></li>
+            <li><a href="#">Kariyer Olanakları</a></li>
+            <li><a href="#">Basında Enza Home</a></li>
+            <li><a href="#">Satış Noktaları</a></li>
+            <li><a href="#">Enza Mimarlarıyla Tasarla</a></li>
+          </ul>
           
-          <div class="link-column">
-            <h3>ENZA HOME</h3>
-            <ul>
-              <li><a href="#">Kurumsal</a></li>
-              <li><a href="#">Kariyer Olanakları</a></li>
-              <li><a href="#">Basında Enza Home</a></li>
-              <li><a href="#">Satış Noktaları</a></li>
-              <li><a href="#">Enza Mimarlarıyla Tasarla</a></li>
-            </ul>
-          </div>
-
-          <div class="link-column">
-            <h3>DESTEK</h3>
-            <ul>
-              <li><a href="#">Siparişini Takip Et</a></li>
-              <li><a href="#">Sık Sorulan Sorular</a></li>
-              <li><a href="#">Değişim & İade & Montaj</a></li>
-              <li><a href="#">Kişisel Verilerin Korunması</a></li>
-              <li><a href="#">Kullanım Koşulları</a></li>
-              <li><a href="#">International Requests</a></li>
-            </ul>
-          </div>
-
-          <div class="link-column">
-            <h3>TAMAMLAYICI MOBİLYALAR</h3>
-            <ul>
-              <li><a href="#">Mutfak Masası</a></li>
-              <li><a href="#">Mutfak Sandalyesi</a></li>
-              <li><a href="#">Orta Sehpa</a></li>
-              <li><a href="#">Zigon Sehpa</a></li>
-              <li><a href="#">Kitaplık</a></li>
-              <li><a href="#">Sandalye</a></li>
-              <li><a href="#">Ayna</a></li>
-              <li><a href="#">Puf</a></li>
-            </ul>
-          </div>
-
-          <div class="link-column">
-            <h3>POPÜLER TAKIMLAR</h3>
-            <ul>
-              <li><a href="#">Koltuk Takımı</a></li>
-              <li><a href="#">Yatak Odası Takımı</a></li>
-              <li><a href="#">Köşe Koltuk Takımı</a></li>
-              <li><a href="#">Yemek Odası Takımı</a></li>
-              <li><a href="#">Genç Odası Takımları</a></li>
-              <li><a href="#">TV Ünitesi Takımları</a></li>
-              <li><a href="#">Mutfak Masaları ve Sandalyeleri</a></li>
-            </ul>
-          </div>
-
-           <div class="link-column">
-            <h3>POPÜLER ÜRÜNLER</h3>
-            <ul>
-              <li><a href="#">3'lü Koltuk</a></li>
-              <li><a href="#">Berjer</a></li>
-              <li><a href="#">Tekli Koltuk</a></li>
-              <li><a href="#">Başlıklı Bazalar</a></li>
-              <li><a href="#">Yataklı Koltuklar</a></li>
-              <li><a href="#">Dolaplar</a></li>
-              <li><a href="#">Açılır Masa</a></li>
-              <li><a href="#">2'li Koltuk</a></li>
-              <li><a href="#">Tv Sehpaları</a></li>
-              <li><a href="#">Masalar</a></li>
-              <li><a href="#">Şifonyer</a></li>
-              <li><a href="#">Sehpalar</a></li>
-            </ul>
-          </div>
-
-           <div class="link-column">
-            <h3>POPÜLER KATEGORİLER</h3>
-            <ul>
-              <li><a href="#">Koltuklar</a></li>
-              <li><a href="#">Yemek Odası</a></li>
-              <li><a href="#">Yatak Odası</a></li>
-              <li><a href="#">Tamamlayıcı Mobilya</a></li>
-              <li><a href="#">Genç Odası</a></li>
-              <li><a href="#">Halı</a></li>
-              <li><a href="#">Aydınlatma</a></li>
-              <li><a href="#">Aksesuar</a></li>
-              <li><a href="#">Black Friday</a></li>
-              <li><a href="#">Sonbahar Fırsatları</a></li>
-              <li><a href="#">Comfort Plus Koltuk</a></li>
-              <li><a href="#">Online Özel</a></li>
-            </ul>
-          </div>
-
+          <!-- Alt Liste (Dikey Devam) -->
+          <h4 class="sub-title">POPÜLER TAKIMLAR</h4>
+          <ul>
+            <li><a href="#">Koltuk Takımı</a></li>
+            <li><a href="#">Yemek Odası</a></li>
+            <li><a href="#">Köşe Koltuk Takımı</a></li>
+            <li><a href="#">Genç Odası</a></li>
+            <li><a href="#">TV Ünitesi Takımları</a></li>
+            <li><a href="#">Mutfak Masaları ve Sandalyeleri</a></li>
+          </ul>
         </div>
 
-        <div class="footer-visuals-area">
+        <!-- Sütun 2: BİRLEŞİK: DESTEK + POPÜLER ÜRÜNLER -->
+        <div class="link-col main-link-col">
+          <!-- Üst Liste -->
+          <h4>DESTEK</h4>
+          <ul>
+            <li><a href="#">Siparişini Takip Et</a></li>
+            <li><a href="#">Sık Sorulan Sorular</a></li>
+            <li><a href="#">Değişim & İade & Montaj</a></li>
+            <li><a href="#">Kişisel Verilerin Korunması</a></li>
+            <li><a href="#">Kullanım Koşulları</a></li>
+            <li><a href="#">International Requests</a></li>
+          </ul>
           
-          <div class="visual-row">
-             <div class="visual-item">
-                <h4>KATALOGLAR</h4>
-                <div class="visual-box catalog-img-container">
-                    <img src="/EnzaHome-Fiyat-Listesi.jpg" alt="Enza Home Fiyat Listesi Kataloğu" class="visual-img">
-                </div>
-                <p>Enza Home Fiyat Listesi</p>
-             </div>
+          <!-- Alt Liste (Dikey Devam) -->
+          <h4 class="sub-title">POPÜLER ÜRÜNLER</h4>
+          <ul>
+            <li><a href="#">3’lü Koltuk</a></li>
+            <li><a href="#">Berjer</a></li>
+            <li><a href="#">Tekli Koltuk</a></li>
+            <li><a href="#">Başlıklı Bazalar</a></li>
+            <li><a href="#">Yataklı Koltuklar</a></li>
+            <li><a href="#">Dolaplar</a></li>
+            <li><a href="#">Açılır Masa</a></li>
+            <li><a href="#">TV Sehpası</a></li>
+            <li><a href="#">Şifonyer</a></li>
+            <li><a href="#">Sehpalar</a></li>
+          </ul>
+        </div>
 
-             <div class="visual-item">
-                <h4>BELGELER</h4>
-                <div class="docs-container">
-                    <div class="doc-box">
-                        <div class="visual-box sm-box doc-img-container">
-                          <img src="/panel-grubu-kullanim-klavuzu.jpg" alt="Panel Grubu Kullanım Klavuzu" class="visual-img">
-                        </div>
-                        <p>Panel Grubu Kullanım Klavuzu</p>
-                    </div>
-                    <div class="doc-box">
-                        <div class="visual-box sm-box doc-img-container">
-                          <img src="/doseme-grubu-kullanim-klavuzu.jpg" alt="Döşeme Grubu Kullanım Klavuzu" class="visual-img">
-                        </div>
-                        <p>Döşeme Grubu Kullanım Klavuzu</p>
-                    </div>
-                </div>
-             </div>
-          </div>
-
-          <div class="social-contact-section">
-             <h4>BİZİ TAKİP EDİN</h4>
-             <div class="social-icons">
-                <span><img src="/social-facebook.jpg" alt="Facebook" class="social-icon-img"></span>
-                <span><img src="/social-x.jpg" alt="X (Twitter)" class="social-icon-img"></span>
-                <span><img src="/social-instagram.jpg" alt="Instagram" class="social-icon-img"></span>
-                <span><img src="/social-pinterest.jpg" alt="Pinterest" class="social-icon-img"></span>
-             </div>
-             
-             <button class="whatsapp-btn">
-                Bize Ulaşın <img src="/whatsapp-icon.jpg" alt="WhatsApp" class="whatsapp-icon-img">
-             </button>
-          </div>
+        <!-- Sütun 3: BİRLEŞİK: TAMAMLAYICI MOBİLYALAR + POPÜLER KATEGORİLER -->
+        <div class="link-col main-link-col">
+          <!-- Üst Liste -->
+          <h4>TAMAMLAYICI MOBİLYALAR</h4>
+          <ul>
+            <li><a href="#">Mutfak Masası</a></li>
+            <li><a href="#">Mutfak Sandalyesi</a></li>
+            <li><a href="#">Orta Sehpa</a></li>
+            <li><a href="#">Zigon Sehpa</a></li>
+            <li><a href="#">Kitaplık</a></li>
+            <li><a href="#">Sandalye</a></li>
+            <li><a href="#">Ayna</a></li>
+            <li><a href="#">Puf</a></li>
+          </ul>
           
-          <div class="etbis-section">
-            <div class="visual-box qr-box-container">
-                <img src="/etbis_qr.png" alt="ETBİS QR Kodu" class="visual-img qr-code-img">
+          <!-- Alt Liste (Dikey Devam) -->
+          <h4 class="sub-title">POPÜLER KATEGORİLER</h4>
+          <ul>
+            <li><a href="#">Koltuklar</a></li>
+            <li><a href="#">Yemek Odası</a></li>
+            <li><a href="#">Yatak Odası</a></li>
+            <li><a href="#">Tamamlayıcı Mobilya</a></li>
+            <li><a href="#">Genç Odası</a></li>
+            <li><a href="#">Halı</a></li>
+            <li><a href="#">Aydınlatma</a></li>
+            <li><a href="#">Aksesuar</a></li>
+            <li><a href="#">Black Friday</a></li>
+            <li><a href="#">Sonbahar Fırsatları</a></li>
+            <li><a href="#">Comfort Plus Koltuk</a></li>
+            <li><a href="#">Online Özel</a></li>
+          </ul>
+        </div>
+        
+        <!-- Sütun 4: KATALOGLAR -->
+        <div class="visual-col catalog-col">
+          <h4>KATALOGLAR</h4>
+          <div class="visual-box">
+            <img src="/EnzaHome-Fiyat-Listesi.jpg" alt="Enza Home Fiyat Listesi" class="catalog-img" />
+          </div>
+          <p class="catalog-title">Enza Home Fiyat Listesi</p>
+        </div>
+
+        <!-- Sütun 5: BELGELER + SOSYAL MEDYA + QR -->
+        <div class="visual-col right-col">
+          
+          <!-- Belgeler -->
+          <h4>BELGELER</h4>
+          <div class="doc-container">
+            <div class="doc-box">
+              <img src="/panel-grubu-kullanim-klavuzu.jpg" alt="Panel Grubu Kılavuzu" class="doc-img" />
+              <p>Panel Grubu Kullanım <br/> Kılavuzu ve Garanti Belgesi</p>
+            </div>
+            <div class="doc-box">
+              <img src="/doseme-grubu-kullanim-klavuzu.jpg" alt="Döşeme Grubu Kılavuzu" class="doc-img" />
+              <p>Döşeme Grubu Kullanım <br/> Kılavuzu ve Garanti Belgesi</p>
             </div>
           </div>
 
+          <!-- Sosyal Medya -->
+          <h4 class="social-title">BİZİ TAKİP EDİN</h4>
+          <div class="social-icons">
+             <img src="/social-facebook.jpg" alt="Facebook" />
+             <img src="/social-x.jpg" alt="X" />
+             <img src="/social-instagram.jpg" alt="Instagram" />
+             <img src="/social-pinterest.jpg" alt="Pinterest" />
+          </div>
+
+          <!-- Bize Ulaşın Butonu -->
+          <button class="contact-btn">
+            Bize Ulaşın
+            <img src="/whatsapp-icon.jpg" alt="WhatsApp İkonu" class="wa-icon" />
+          </button>
+          
+          <!-- QR Kod -->
+          <img src="/etbis_qr.png" alt="ETBİS QR Kod" class="qr-img" />
         </div>
+
       </div>
     </div>
 
-    <div class="footer-bottom-bar">
-        <div class="bottom-container">
-            <div class="footer-logo">
-                <span class="logo-bracket">[ ]</span> enza HOME
-            </div>
-            <div class="copyright">
-                © 2025 Tüm Hakları Saklıdır.
-            </div>
-        </div>
+    <!-- ALT BAR -->
+    <div class="footer-bottom">
+      <div class="bottom-container">
+        <img src="/enza-logo.jpg" alt="Enza Home Logo" class="footer-logo" />
+        <p class="copyright-text">© 2025 Tüm Hakları Saklıdır.</p>
+      </div>
     </div>
+
   </footer>
 </template>
 
 <script setup>
-// Footer için şu an özel bir JavaScript koduna ihtiyacımız yok
+// Footer için özel bir JavaScript koduna gerek yoktur.
 </script>
 
 <style scoped>
-/* Genel Footer Ayarları */
-.site-footer {
-  background-color: #1a1a1a; /* Koyu Gri Arka Plan */
-  color: #b0b0b0; /* Açık Gri Yazı */
-  font-family: 'Arial', sans-serif;
-  font-size: 12px;
-  padding-top: 50px;
+.footer {
+  background-color: #1b1b1b; /* Koyu arka plan */
+  color: #fff;
+  padding: 40px 0; /* Yatay padding'i konteyner yönetir */
+  font-family: Arial, sans-serif;
+  width: 100vw !important;     /* 🔥 FULL GENİŞLİK */
+  margin-left: calc(50% - 50vw) !important;  /* 🔥 Sayfayı tamamen kaplayan hizalama */
 }
 
-.footer-container {
+.footer-grid-wrapper {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px; /* Kenar boşluğu */
 }
 
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+/* 🔥 ANA GRID YAPISI (3 Link Kolonu + 2 Görsel Kolonu) */
+.footer-grid {
+  display: grid;
+  /* 3 Link kolonu (eşit) | Katalog (dar) | Sağ Kolon (geniş) */
+  grid-template-columns: repeat(3, 1.2fr) 1fr 1.5fr; 
   gap: 30px;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
-/* --- Link Sütunları --- */
-.footer-links-area {
-  display: flex;
-  flex: 3; /* Alanın 3/4'ünü kapla */
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
+/* Sadece 1. kolona özel min-height veriyoruz */
+.footer-grid .link-col:nth-child(1) {
+    min-height: 350px;
 }
 
-.link-column {
-    min-width: 130px;
+/* Başlık ile altındaki liste arasındaki boşluğu azalt */
+.footer-grid .main-link-col ul {
+  margin-top: 6px !important;   /* 15-20px yerine 6px */
 }
 
-.link-column h3 {
-  color: white;
-  font-size: 11px;
+/* Tüm liste öğelerini sola hizala */
+.footer-grid .main-link-col ul li,
+.footer-grid .main-link-col ul li a {
+  text-align: left !important;
+}
+
+
+
+
+/* --- Genel Kolon Stilleri --- */
+.footer-grid h4 {
+  font-size: 13px;
+  color: #fff; 
+  text-align: left !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
   font-weight: bold;
-  margin-bottom: 15px;
-  text-transform: uppercase;
 }
 
-.link-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* 👇 DÜZELTME BURADA: Bu alt başlıkların da üstteki h4 ile aynı hizadan başlaması için 
+   listeler arasındaki boşluğu kontrol ediyoruz. 
+*/
+.link-col {
+    display: grid;
+    grid-template-rows: auto auto;
+    
+}
+.link-col ul {
+    list-style: none;
+    padding: 0;
+    /* Tarayıcı varsayılan olarak ul etiketine margin-top verir. Bu yüzden onu sıfırlıyoruz. */
+    margin-top: 0; 
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
 
-.link-column li {
-  margin-bottom: 8px;
+/* Alt başlıklar için üstten boşluk */
+.link-col .sub-title {
+    margin: 0;
 }
 
-.link-column a {
-  color: #b0b0b0;
+
+/* --- Link Kolonları (Birleşik Sütunlar) --- */
+.link-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Bu kural tekrarlandı, ancak genel stil için kalsın */
+}
+.link-col li {
+    margin-bottom: 4px;
+}
+.link-col a {
+  font-size: 12px;
+  color: #bdbdbd; /* Açık gri link */
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.2s;
+}
+.link-col a:hover {
+  color: #fff;
 }
 
-.link-column a:hover {
-  color: white;
+/* --- Görsel Kolonlar (Katalog ve Belgeler) --- */
+.visual-col {
+  align-self: flex-start; 
 }
 
-/* --- Sağ Taraf Görsel Alanı --- */
-.footer-visuals-area {
-  flex: 1; /* Alanın 1/4'ünü kapla */
+/* --- Katalog (4. Kolon) --- */
+.catalog-img {
+  width: 90px;
+  height: 120px; 
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.catalog-title {
+  font-size: 11px;
+  margin-top: 6px;
+  color: #bdbdbd;
+}
+
+/* --- Belgeler, Sosyal Medya, QR (5. Kolon) --- */
+.right-col {
   display: flex;
   flex-direction: column;
-  align-items: center; /* İçerikleri ortala */
-  text-align: center;
 }
 
-.visual-row {
+/* Belgeler Kutusu */
+.doc-container {
     display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.visual-item h4, .social-contact-section h4 {
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.visual-box {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin: 0 auto 10px;
-}
-
-/* Görsel kutularının içindeki img etiketlerine genel stil */
-.visual-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover; /* Resmin kutuyu doldurmasını sağlar */
-}
-
-/* Katalog resmi için kapsayıcı ve img boyutu */
-.catalog-img-container {
-    width: 80px;
-    height: 100px;
-    border: 1px solid #444;
-    overflow: hidden; /* Taşmayı engelle */
-}
-.catalog-img-container .visual-img {
-    width: 100%;
-    height: 100%;
-}
-
-
-.docs-container {
-    display: flex;
-    gap: 10px;
-}
-
-.doc-box {
-    width: 70px;
-}
-
-/* Belge resimleri için kapsayıcı ve img boyutu */
-.doc-img-container {
-    width: 60px; /* sm-box'ın eski genişliği */
-    height: 80px; /* sm-box'ın eski yüksekliği */
-    overflow: hidden;
-    margin: 0 auto 10px; /* ortalama ve alttan boşluk */
-    border: 1px solid #444; /* Eğer çerçeve istersen */
-}
-.doc-img-container .visual-img {
-    width: 100%;
-    height: 100%;
-}
-
-
-.visual-item p {
-    font-size: 10px;
-    line-height: 1.2;
-}
-
-
-/* Sosyal Medya */
-.social-contact-section {
+    gap: 15px;
     margin-bottom: 20px;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    justify-content: center;
+.doc-box {
+    width: 90px; 
+    text-align: center;
 }
 
-.social-icons span {
-    width: 30px;
-    height: 30px;
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    font-size: 9px; 
-    cursor: pointer;
-    color: white;
-}
-
-/* Sosyal medya ikon resimleri için stil */
-.social-icon-img {
-    width: 16px;
-    height: 16px;
-    filter: invert(1); /* Siyah ikonları beyaza çevirmek için */
-}
-
-.whatsapp-btn {
-    background-color: black; /* Buton arka planı siyah */
-    color: white;
-    border: 1px solid #555;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* İkon ve yazı arasındaki boşluğu artır */
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.whatsapp-btn:hover {
-  background-color: #333;
-}
-/* WhatsApp ikon resmi için stil */
-.whatsapp-icon-img {
-    width: 16px;
-    height: 16px;
-    filter: invert(1); /* Siyah ikonları beyaza çevirmek için */
-}
-
-/* ETBİS QR kodu için kapsayıcı ve img boyutu */
-.qr-box-container {
-    width: 80px;
-    height: 80px;
-    background-color: white; 
-    color: black;
-    overflow: hidden;
-}
-.qr-box-container .visual-img {
+.doc-box .doc-img {
     width: 100%;
-    height: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.doc-box p {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #bdbdbd;
+}
+
+/* Sosyal Medya */
+.social-title {
+  margin-top: 15px; /* Belge kutusundan ayırır */
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.social-icons img {
+  width: 28px; 
+  height: 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #333; 
+  padding: 5px;
+}
+
+/* Bize Ulaşın Butonu */
+.contact-btn {
+  background: #fff;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.wa-icon {
+  width: 16px;
+  filter: invert(1); 
+}
+
+/* QR Kod */
+.qr-img {
+  width: 80px;
+  height: 80px;
+  display: block;
 }
 
 
-/* --- Alt Şerit --- */
-.footer-bottom-bar {
-    background-color: #111; /* Daha koyu siyah */
-    padding: 20px 0;
-    border-top: 1px solid #222;
+/* --- ALT BAR --- */
+.footer-bottom {
+  border-top: 1px solid #333;
+  margin-top: 10px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bottom-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
 }
 
 .footer-logo {
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+  width: 120px;
+  height: auto;
+  filter: brightness(2); 
 }
 
-/* Footer'daki büyük logo için stil */
-.footer-brand-logo {
-    height: 25px; /* Logonun yüksekliği */
-    width: auto;
+.copyright-text {
+  font-size: 11px;
+  color: #666;
 }
 
-/* Önceki görsel kutularını kaldırmak için, eğer img kullanılıyorsa gizlenecekler */
-/* .catalog-img span, .sm-box span, .qr-box span, .footer-logo .logo-bracket {
-    display: none;
-} */
+/* Responsive Düzenleme */
+@media (max-width: 1200px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr) 1.5fr; /* 3 Link + 1 Katalog + 1 Sağ Kolon */
+        gap: 20px;
+    }
+    .right-col {
+        grid-column: span 1; 
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 </style>
